@@ -1,8 +1,9 @@
 FROM alpine:latest
 
 RUN apk add --no-cache nodejs yarn
-COPY . ./
+
+COPY ./ /src/
 
 RUN yarn install
 
-CMD ["node", "app.js"]
+CMD ["node", "/src/src/app.js"]

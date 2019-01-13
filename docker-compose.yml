@@ -3,9 +3,12 @@ version: '3.3'
 services: 
   app:
     build: ./app
+    restart: always
     links:
       - "mongo"
-
+    working_dir: "/src"
+    tty: true
+    
   mongo:
     image: mongo
     restart: always
