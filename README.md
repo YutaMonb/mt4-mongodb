@@ -30,6 +30,7 @@ Dockerである必要がなくなりました。
 
 物好きな人はDocker、めんどい人は
 ```
+cd ./app/src/
 yarn install
 
 node ./app/src/app.js
