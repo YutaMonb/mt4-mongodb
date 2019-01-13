@@ -11,7 +11,7 @@ MT4 <=HTTP=> MT4-MONGODB(express server) <=> MongoDB
 
 MongoDB Hostを環境変数で指定します
 ```
-$DB_HOST = "mongodb://127.0.0.1/" 
+$DB_HOST = "mongodb://127.0.0.1/oanda" 
 ```
 
 Dockerで実行
