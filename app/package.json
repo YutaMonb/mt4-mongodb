@@ -4,5 +4,10 @@
   "main": "app.js",
   "repository": "git@github.com:YutaMonb/mt4-mongodb.git",
   "author": "yutamonb <yutamonb@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.4.3",
+    "mongoose-double": "^0.0.1"
+  }
 }
