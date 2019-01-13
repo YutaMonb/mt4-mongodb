@@ -6,9 +6,9 @@ services:
     restart: always
     links:
       - "mongo"
-    working_dir: "/src"
+    working_dir: "/usr/src/app"
     tty: true
-    
+
   mongo:
     image: mongo
     restart: always
@@ -19,4 +19,3 @@ services:
       - 27017:27017
     volumes:
       - ./mongo:/data/db
-    
