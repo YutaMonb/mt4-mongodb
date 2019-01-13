@@ -10,8 +10,7 @@ int OnInit() {
 void OnTick() {
   string cookie = NULL,headers;
   char post[], result[];
-  string url = "http://127.0.0.1:8088/tick?symbol=" + Symbol() + "&bid=" + Bid + "&ask=" + Ask + "&time=" + (long)TimeCurrent();
+  string url = "http://127.0.0.1/tick?symbol=" + Symbol() + "&bid=" + Bid + "&ask=" + Ask + "&time=" + (long)TimeCurrent();
   int res = 0;
   res = WebRequest("GET", url, cookie, NULL, 1000, post, 0, result, headers);
-  Print(res);
 }
