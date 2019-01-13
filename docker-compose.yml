@@ -6,6 +6,8 @@ services:
     restart: always
     links:
       - "mongo"
+    ports:
+      - 8088:8088
     working_dir: "/usr/src/app"
     tty: true
 
