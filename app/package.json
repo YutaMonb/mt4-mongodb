@@ -1,0 +1,8 @@
+{
+  "name": "mt4-mongodb",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": "git@github.com:YutaMonb/mt4-mongodb.git",
+  "author": "yutamonb <yutamonb@gmail.com>",
+  "license": "MIT"
+}
