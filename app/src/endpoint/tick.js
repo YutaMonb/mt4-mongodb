@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
     tick.symbol = req.query.symbol;
     tick.bid = req.query.bid;
     tick.ask = req.query.ask;
-    tick.timestamp = req.query.timestamp;
+    tick.timestamp = req.query.time;
 
     tick.save((err) => {
         if (err) {
