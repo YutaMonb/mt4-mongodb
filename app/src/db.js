@@ -11,7 +11,7 @@ let Tick = new Schema({
     symbol : {type: String, require: true}, // GBP_JPY
     bid: {type: SchemaTypes.Double, require: true}, // 139.283
     ask: {type: SchemaTypes.Double, requrie: true}, // 139.461
-    timestamp: {type: SchemaTypes.Number, require: true}
+    timestamp: {type: SchemaTypes.Double, require: true}
 });
 
 
