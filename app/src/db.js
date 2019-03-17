@@ -1,13 +1,13 @@
 'use strict';
 
-let mongoose = require('mongoose')
+const mongoose = require('mongoose')
 require('mongoose-double')(mongoose);
 mongoose.connect(process.env.DB_HOST, {useNewUrlParser: true});
 
-let Schema = mongoose.Schema;
-let SchemaTypes = Schema.Types;
+const Schema = mongoose.Schema;
+const SchemaTypes = Schema.Types;
 
-let Tick = new Schema({
+const Tick = new Schema({
     symbol : {type: String, require: true}, // GBP_JPY
     bid: {type: SchemaTypes.Double, require: true}, // 139.283
     ask: {type: SchemaTypes.Double, requrie: true}, // 139.461

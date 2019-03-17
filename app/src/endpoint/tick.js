@@ -1,8 +1,8 @@
 'use strict';
 
-let express = require('express');
-let router = express.Router();
-let Tick = require('../db');
+const express = require('express');
+const router = express.Router();
+const Tick = require('../db');
 
 // http://localhost/tick?symbol=GBP_JPY&bid=139.283&ask=139.461&timestamp=1547407024
 router.get('/', (req, res) => {
