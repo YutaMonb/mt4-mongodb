@@ -1,45 +1,40 @@
 # MT4-MONGODB
 
-MT4からTickデータを吸い上げてMongoDBに入れます
+MT4からTickデータを吸い上げてMongoDBに入れます。
+MT4とMongoDBのBridge的な役割をします。
 
 ## アーキテクチャ
 
 MT4 <=HTTP=> MT4-MONGODB(express server) <=> MongoDB
 
-
 ## 使い方
 
 ### サーバー部分
 
-MongoDB Hostを環境変数で指定します
+MongoDB Hostを環境変数で指定します。
 ```
-$DB_HOST = "mongodb://127.0.0.1/oanda" 
+export DB_HOST="mongodb://127.0.0.1/oanda" 
 ```
 
 Windowsな場合(PowerShell)
 ```
-$env:DB_HOST = "mongodb://127.0.0.1/oanda"
+$env:DB_HOST="mongodb://127.0.0.1/oanda"
 ```
 
-Dockerで実行
-```
-docker-compose up --build
-```
-→ MongoDBをDockerで立ち上げる予定でしたが、Windowsの場合Pro版、HyperV、フォーマットなどによって起動できないため、
-Dockerである必要がなくなりました。
-
-物好きな人はDocker、めんどい人は
+サーバーを起動します
 ```
 cd ./app/src/
 yarn install
 
-node ./app/src/app.js
+node ./src/app.js
 ```
 
 ### MT4の設定
 
-mqlディレクトリの中にある"mt4-mongodb.mq4"をMT4に入れ、実行
+mqlディレクトリの中にある"mt4-mongodb.mq4"をMT4に入れ、実行。
 
 ツール→オプションの「エキスパートアドバイザー」で「WebRequestを許可するURLリスト」に登録してください。
+
+HTTP Requestは80, 443番しか対応していなかったはずです。(未検証)
 
 MT4クソなので、詳しくは [こちらで調べてください](https://google.com)
