@@ -5,6 +5,9 @@ const router = express.Router();
 const Tick = require('../db');
 
 // http://localhost/tick?symbol=GBP_JPY&bid=139.283&ask=139.461&timestamp=1547407024
+let totalcounter = 0;
+let counter = 0;
+let errorcounter = 0;
 router.get('/', (req, res) => {
   let tick = new Tick();
   tick.symbol = req.query.symbol;
@@ -13,11 +16,18 @@ router.get('/', (req, res) => {
   tick.timestamp = req.query.time;
 
   tick.save(err => {
+    totalcounter++;
     if (err) {
-      console.log(err);
+      console.error(err);
+      console.log(errorcounter++);
       res.statusCode(500);
       return;
     }
+    if (counter <= 100) {
+      console.log(`TotalCount: ${totalcounter++}`);
+      counter = 0;
+    }
+    counter++;
     res.sendStatus(200);
   });
 });
