@@ -17,17 +17,17 @@ router.get('/', (req, res) => {
 
   tick.save(err => {
     totalcounter++;
+    counter++;
     if (err) {
       console.error(err);
       console.log(errorcounter++);
       res.statusCode(500);
       return;
     }
-    if (counter <= 100) {
+    if (counter > 100) {
       console.log(`TotalCount: ${totalcounter++}`);
       counter = 0;
     }
-    counter++;
     res.sendStatus(200);
   });
 });
